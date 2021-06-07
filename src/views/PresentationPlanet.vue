@@ -12,13 +12,25 @@
             <div class="info mb-3"><span class="text-secondary">Population :</span> {{ planet.population !== 'unknown' ? planet.population : 'Inconnu' }}</div>
           </div>
         </div>
-        <div class="small-information mt-5">
-          <p>{{ planet.diameter !== 'unknown' ? planet.diameter : 'Inconnu' }}</p>
-          <span class="far fa-circle fa-2x text-secondary"></span>
-        </div>
-        <div class="small-information mt-5">
-          <p>{{ planet.climate !== 'unknown' ? planet.climate : 'Inconnu' }}</p>
-          <span class="fas fa-thermometer-full fa-2x text-secondary"></span>
+        <div class="d-grid-2 mt-5 mb-5 w-100">
+          <div class="information">
+            <span class="far fa-circle fa-3x img text-secondary"></span>
+            <div>
+              <div class="bold text-secondary">
+                Diamètre
+              </div>
+              <p>{{ planet.diameter !== 'unknown' ? planet.diameter : 'Inconnu' }}</p>
+            </div>
+          </div>
+          <div class="information">
+            <span class="fas fa-thermometer-full fa-3x img text-secondary"></span>
+            <div>
+              <div class="bold text-secondary">
+                Climat
+              </div>
+              <p>{{ planet.climate !== 'unknown' ? planet.climate : 'Inconnu' }}</p>
+            </div>
+          </div>
         </div>
         <div class="d-grid-2 mt-5 mb-5 w-100">
           <div class="information">
