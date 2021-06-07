@@ -1,7 +1,7 @@
 <template>
   <main class="container container-1-1">
     <div>
-      <div class="card">
+      <div class="card card-1">
         <h2 class="title">S'incrire pour le prochain décolage !</h2>
         <p>Inscrivez-vous pour participer au prochaine trouvailles !</p>
         <form @submit="onSubmit">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div>
-      <div class="card">
+      <div class="card card-2">
         <h2 class="title text-primary">Liste des participants</h2>
         <table class="table w-100">
           <thead class="thead">
@@ -113,5 +113,9 @@ export default {
 <style scoped lang="scss">
   .form-control-danger {
     border-color: #C75757;
+  }
+  .card-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    center / cover no-repeat url("../assets/images/image6.jpeg");
   }
 </style>

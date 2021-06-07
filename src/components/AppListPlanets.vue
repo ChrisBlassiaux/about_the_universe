@@ -89,3 +89,10 @@ export default {
 }
 </script>
 
+<style scoped lang="scss">
+.card {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  center / cover no-repeat url("../assets/images/image8.jpg");
+}
+</style>
+

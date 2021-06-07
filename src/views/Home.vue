@@ -22,3 +22,10 @@ export default {
   components: {},
 }
 </script>
+
+<style scoped lang="scss">
+.card {
+  background: linear-gradient(rgba(0, 0, 255, 0.2), rgba(255, 255, 0, 0.2)),
+              center / cover no-repeat url("../assets/images/image3.jpg");
+}
+</style>
