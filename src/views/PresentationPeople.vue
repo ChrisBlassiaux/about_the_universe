@@ -69,7 +69,6 @@ export default {
   name: 'PresentationPeople',
   data() {
     return {
-      id: 1,
       character: false,
       planet: false,
       vehicles: []

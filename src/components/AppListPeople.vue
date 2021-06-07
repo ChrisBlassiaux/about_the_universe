@@ -78,8 +78,8 @@ export default {
         .then(response => {
           response.data.results.forEach(item => {
             this.people.push(item)
-            this.peopleSaved = this.people;
           })
+          this.peopleSaved = this.people;
         })
     }
   }
