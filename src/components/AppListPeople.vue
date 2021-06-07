@@ -3,12 +3,12 @@
     <div class="card-header">
       <h2 class="title text-primary">Personnes</h2>
       <div class="form-group">
-        <select class="select pr-5">
-          <option value="">Par planète</option>
-          <option value="test">1</option>
-          <option value="test">2</option>
-          <option value="test">3</option>
-          <option value="test">4</option>
+        <select class="select pr-5" @change="filterByGender($event)">
+          <option value="">Par genre</option>
+          <option value="male">Male</option>
+          <option value="female">Femelle</option>
+          <option value="n/a">n/a</option>
+          <option value="hermaphrodite">Hermaphrodite</option>
         </select>
       </div>
       <div class="form-group">
@@ -33,7 +33,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="p in people" v-bind:key="p.name">
+          <tr v-for="p in people" v-bind:key="p.name" @click="showPresentation(p)">
             <td>{{ p.name }}</td>
             <td>{{ p.gender }}</td>
           </tr>
@@ -49,24 +49,38 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   name: 'AppNavbar',
   data() {
     return {
-      people: []
+      people: [],
+      peopleSaved: []
     }
   },
   methods: {
-
+    showPresentation(p) {
+      this.$emit('presentation-people', p);
+    },
+    filterByGender(event) {
+      this.people = this.peopleSaved;
+      if (event.target.value !== '') {
+        this.people = this.people.filter(p => p.gender === event.target.value);
+      } else {
+        this.people = this.peopleSaved;
+      }
+    }
   },
   mounted() {
     for(let i = 1; i < 10; i++) {
-      // axios.get(`https://swapi.dev/api/people/?page=${i}`)
-      //   .then(response => {
-      //     response.data.results.forEach(item => this.people.push(item))
-      //   })
+      axios.get(`https://swapi.dev/api/people/?page=${i}`)
+        .then(response => {
+          response.data.results.forEach(item => {
+            this.people.push(item)
+            this.peopleSaved = this.people;
+          })
+        })
     }
   }
 }
