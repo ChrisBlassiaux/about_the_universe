@@ -5,7 +5,9 @@
       <div class="burger" @click="clickNav"></div>
     </div>
     <nav class="nav">
-      <img src="../assets/logotype.png" alt="Logotype de Direct Burotic" />
+      <router-link to="/">
+        <img src="../assets/logotype.png" alt="Logotype de Direct Burotic" />
+      </router-link>
       <router-link to="/" class="navbar-link">Accueil</router-link>
     </nav>
   </div>
@@ -49,12 +51,6 @@ export default {
         nav.style.display = "none";
       }
     }
-  },
-  props: {}
+  }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
-</style>
