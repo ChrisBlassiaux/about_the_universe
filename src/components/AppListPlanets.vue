@@ -64,11 +64,11 @@ export default {
     },
     filterByGender(event) {
       this.planets = this.planetsSaved;
-      if (event.target.value === '1') {
+      if (event.target.value === '0') {
         this.planets = this.planets.filter(p => p.population !== 'unknown' && Number(p.population) < 100000);
-      } else if (event.target.value === '2') {
+      } else if (event.target.value === '1') {
         this.planets = this.planets.filter(p => p.population !== 'unknown' &&  Number(p.population) > 100000 && Number(p.population) < 100000000);
-      } else if (event.target.value === '3') {
+      } else if (event.target.value === '2') {
         this.planets = this.planets.filter(p => p.population !== 'unknown' && Number(p.population) > 100000000);
       } else {
         this.planets = this.planetsSaved;
