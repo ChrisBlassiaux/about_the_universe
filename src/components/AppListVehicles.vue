@@ -34,7 +34,7 @@
         <tbody>
         <tr v-for="p in vehicles" v-bind:key="p.name" @click="showPresentation(p)">
           <td>{{ p.name }}</td>
-          <td>{{ p.cost_in_credits }}</td>
+          <td>{{ p.cost_in_credits !== 'unknown' ? p.cost_in_credits : 'Inconnu' }}</td>
         </tr>
         </tbody>
       </table>

@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import PresentationPeople from '../views/PresentationPeople.vue'
 import PresentationPlanet from '../views/PresentationPlanet.vue'
 import PresentationVehicle from '../views/PresentationVehicle.vue'
+import RocketTakeOf from '../views/RocketTakeOf.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/vehicles',
     name: 'PresentationVehicle',
     component: PresentationVehicle
+  },
+  {
+    path: '/rocket',
+    name: 'RocketTakeOf',
+    component: RocketTakeOf
   }
 ]
 

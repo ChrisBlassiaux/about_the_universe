@@ -9,6 +9,7 @@
         <img src="../assets/logotype.png" alt="Logotype de Direct Burotic" />
       </router-link>
       <router-link to="/" class="navbar-link">Accueil</router-link>
+      <router-link to="/rocket" class="navbar-link">Prochaine mission</router-link>
     </nav>
   </div>
   <nav class="vertical-navbar">
