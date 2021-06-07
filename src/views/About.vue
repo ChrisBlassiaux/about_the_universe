@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
-    <h1 class="title text-danger">This is an about page</h1>
-  </div>
+  <main class="container container">
+    <div class="card">
+      <h1 class="title">ABOUT</h1>
+    </div>
+  </main>
 </template>

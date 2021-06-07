@@ -792,7 +792,7 @@ button {
     background-color: #5E95B7;
 }
 
-.nav-vertical-link.active {
+.nav-vertical-link.router-link-exact-active {
     background-color: #5E95B7;
 }
 
@@ -828,7 +828,7 @@ button {
         color: #5E95B7;
     }
 
-    .navbar-link.active {
+    .navbar-link.router-link-exact-active {
         color: #5E95B7;
     }
 
