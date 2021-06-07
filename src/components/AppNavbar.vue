@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: 'AppNavbar',
   methods: {
     resizeNav() {
       if (document.querySelector('.vertical-navbar')) {

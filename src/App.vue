@@ -1,5 +1,5 @@
 <template>
-  <navbar></navbar>
+  <app-navbar></app-navbar>
   <router-view/>
 </template>
 
@@ -7,8 +7,8 @@
 
 </style>
 <script>
-  import Navbar from "./components/Navbar";
+  import AppNavbar from "./components/AppNavbar";
   export default {
-    components: {Navbar}
+    components: {AppNavbar}
   }
 </script>
