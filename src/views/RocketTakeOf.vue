@@ -3,13 +3,13 @@
     <div>
       <div class="card card-1">
         <h2 class="title">S'incrire pour le prochain décolage !</h2>
-        <p>Inscrivez-vous pour participer au prochaine trouvailles !</p>
+        <p>Inscrivez-vous pour participer aux prochaines trouvailles !</p>
         <form @submit="onSubmit">
           <div class="form-group-1-1">
             <div class="form-group">
               <label for="first_name">Prénom</label>
               <input v-model="form.first_name" type="text" v-bind:class="{ 'form-control': true, 'form-control-danger': errors.first_name }" id="first_name" placeholder="Entrez votre prénom">
-              <p class="info text-danger" v-if="errors.first_name">Le prénom est obligatoire.</p>
+              <p class="info text-danger" v-if="errors.first_name">Le prénom est obligatoire et ne doit pas déjà être entré.</p>
             </div>
             <div class="form-group">
               <label for="last_name">Nom</label>
