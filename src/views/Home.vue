@@ -1,18 +1,102 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <main class="container">
+    <div class="card card-1">
+      <h1 class="title text-secondary">ABOUT THE UNIVERSE</h1>
+      <p>Bienvenue sur <span class="text-secondary">ABOUT THE UNIVERSE</span> pour découvrir toutes nos découvertes à propos du monde qui nous entoure !</p>
+      <router-link to="/people" class="btn mt-4" >Décourvrir</router-link>
+    </div>
+    <div class="card card-2">
+      <h1 class="title text-secondary">Les chiffres</h1>
+      <p>Nous nous efforcons à archiver toutes nos trouvailles pour vous les partager autant que possible !</p>
+      <div class="d-grid-2 mt-5 mb-5 w-100">
+        <div class="d-grid-2 mt-5 mb-5 w-100">
+          <div class="information">
+            <span class="fas fa-users fa-3x img text-secondary"></span>
+            <div class="ml-3">
+              <div class="bold text-secondary">
+                Nombre d'êtres vivants recensés
+              </div>
+              <div class="info">{{ nbOfPeople }}</div>
+            </div>
+          </div>
+          <div class="information">
+            <span class="fas fa-space-shuttle fa-3x img text-secondary"></span>
+            <div class="ml-3">
+              <div class="bold text-secondary">
+                Nombre de véhicules recensés
+              </div>
+              <div class="info">{{ nbOfVehicles }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid-2 mt-5 mb-5 w-100">
+          <div class="information">
+            <span class="fas fa-globe fa-3x img text-secondary mr-3"></span>
+            <div>
+              <div class="bold text-secondary">
+                Nombre de planètes recensées
+              </div>
+              <div class="info">{{ nbOfPlanets }}</div>
+            </div>
+          </div>
+          <div class="information">
+            <span class="fas fa-clock fa-3x img text-secondary mr-3"></span>
+            <div>
+              <div class="bold text-secondary">
+                Prochaine mission
+              </div>
+              <div class="info">10 Juin 2021</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-link to="/rocket" class="btn mt-4 float-right" >Participer à la prochaine mission</router-link>
+    </div>
+  </main>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios';
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      nbOfPeople: '',
+      nbOfVehicles: '',
+      nbOfPlanets: '',
+    }
+  },
+  methods: {
+    getDatas() {
+      axios.get(`https://swapi.dev/api/people/`)
+          .then(response => {
+            this.nbOfPeople = response.data.count;
+          })
+      axios.get(`https://swapi.dev/api/vehicles/`)
+          .then(response => {
+            this.nbOfVehicles = response.data.count;
+          })
+      axios.get(`https://swapi.dev/api/planets/`)
+          .then(response => {
+            this.nbOfPlanets = response.data.count;
+          })
+    }
+  },
+  components: {},
+  mounted() {
+    this.getDatas();
   }
 }
 </script>
+
+<style scoped lang="scss">
+.card-1 {
+  background: linear-gradient(rgba(0, 0, 255, 0.2), rgba(255, 255, 0, 0.2)),
+              center / cover no-repeat url("../assets/images/image3.jpg");
+}
+.card-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  center / cover no-repeat url("../assets/images/image8.jpg");
+}
+</style>
